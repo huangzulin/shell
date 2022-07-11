@@ -8,7 +8,7 @@ case $(uname -m) in
     aarch64)    arch="arm64" ;;
 esac
 
-mosdns_download_url=https://gh.zulin.fun/IrineSistiana/mosdns-cn/releases/latest/download/mosdns-cn-linux-$arch.zip
+mosdns_download_url=https://fastgit.org/IrineSistiana/mosdns-cn/releases/latest/download/mosdns-cn-linux-$arch.zip
 
 wget -N --no-check-certificate $mosdns_download_url -O mosdns-cn.zip && unzip -p mosdns-cn.zip mosdns-cn >/root/mosdns/mosdns-cn && rm mosdns-cn.zip
 
@@ -55,8 +55,8 @@ cd /root/mosdns && ./mosdns-cn --service install --config config.yaml
 cat >/root/mosdns/update-geo.sh << EOL
 #!/bin/bash
 
-wget -O /root/mosdns/geoip.dat https://gh.zulin.fun/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
-wget -O /root/mosdns/geosite.dat https://gh.zulin.fun/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+wget -O /root/mosdns/geoip.dat https://fastgit.org/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+wget -O /root/mosdns/geosite.dat https://fastgit.org/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 /root/mosdns/mosdns-cn --service restart
 EOL
 
